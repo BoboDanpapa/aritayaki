@@ -1,3 +1,4 @@
+import { publicAssetUrl } from "../domain/assets";
 import { useApp } from "../state/AppContext";
 
 const content = {
@@ -38,7 +39,7 @@ export function HeritagePage() {
     <div className="heritage-page">
       <section className="heritage-hero page-section">
         <div><span>ARITA, SAGA</span><h1>{t.title}</h1><p>{t.lead}</p></div>
-        <img src="/images/balloon-plate.jpg" alt="華山 reference vessel" />
+        <img src={publicAssetUrl("/images/balloon-plate.jpg")} alt="華山 reference vessel" />
       </section>
       <section className="heritage-narrative page-section">
         <p className="large-copy">{t.body}</p>

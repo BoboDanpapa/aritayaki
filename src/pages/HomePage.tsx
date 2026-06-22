@@ -2,6 +2,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProductCard } from "../components/ProductCard";
 import { getCopy } from "../content/copy";
+import { publicAssetUrl } from "../domain/assets";
 import { products } from "../domain/products";
 import { useApp } from "../state/AppContext";
 
@@ -76,7 +77,7 @@ export function HomePage() {
           </div>
         </div>
         <div className="home-hero-image reveal delay-one">
-          <img src="/images/camellia-plate.jpg" alt="華山 山茶花長角皿 reference" />
+          <img src={publicAssetUrl("/images/camellia-plate.jpg")} alt="華山 山茶花長角皿 reference" />
           <p>{c.sourceNote}</p>
         </div>
       </section>
@@ -115,7 +116,7 @@ export function HomePage() {
             <span>Condition Report</span>
             <strong>KZ-DEMO-03</strong>
           </div>
-          <img src="/images/celadon-bowl.jpg" alt="青磁唐草彫小鉢 reference" />
+          <img src={publicAssetUrl("/images/celadon-bowl.jpg")} alt="青磁唐草彫小鉢 reference" />
           <ul>
             <li><Check size={16} />Kiln speck, outer wall</li>
             <li><Check size={16} />Subtle visibility</li>
@@ -126,8 +127,8 @@ export function HomePage() {
 
       <section className="chef-editorial page-section">
         <div className="chef-image-grid">
-          <img src="/images/blue-bowl.jpg" alt="藍釉銀彩多用缽 reference" />
-          <img src="/images/balloon-plate.jpg" alt="色鍋島風船紋六寸皿 reference" />
+          <img src={publicAssetUrl("/images/blue-bowl.jpg")} alt="藍釉銀彩多用缽 reference" />
+          <img src={publicAssetUrl("/images/balloon-plate.jpg")} alt="色鍋島風船紋六寸皿 reference" />
         </div>
         <div className="chef-copy">
           <h2>{t.chefTitle}</h2>

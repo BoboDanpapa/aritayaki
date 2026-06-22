@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { publicAssetUrl } from "../domain/assets";
 import { useApp } from "../state/AppContext";
 
 const content = {
@@ -34,7 +35,7 @@ export function ForChefsPage() {
   const t = content[language];
   return (
     <div className="chefs-page">
-      <section className="chefs-hero page-section"><div><span>For Culinary Professionals</span><h1>{t.title}</h1><p>{t.lead}</p><Link className="button primary" to="/collection">{t.cta}<ArrowRight size={17} /></Link></div><img src="/images/blue-bowl.jpg" alt="Blue glaze bowl reference" /></section>
+      <section className="chefs-hero page-section"><div><span>For Culinary Professionals</span><h1>{t.title}</h1><p>{t.lead}</p><Link className="button primary" to="/collection">{t.cta}<ArrowRight size={17} /></Link></div><img src={publicAssetUrl("/images/blue-bowl.jpg")} alt="Blue glaze bowl reference" /></section>
       <section className="chef-reasons page-section">{t.reasons.map(([title, body]) => <article key={title}><h2>{title}</h2><p>{body}</p></article>)}</section>
       <section className="inquiry-process page-section"><h2>{t.process}</h2><div>{t.steps.map((step) => <div key={step}><span>{step}</span></div>)}</div></section>
     </div>

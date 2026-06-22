@@ -1,3 +1,4 @@
+import { publicAssetUrl } from "./assets";
 import type { Language } from "./markets";
 
 export type LocalizedText = Record<Language, string>;
@@ -39,7 +40,7 @@ export const products: Product[] = [
       "zh-TW": "花形輪廓搭配色鍋島風格紋樣，能為前菜、刺身與煮魚留下漂亮的盤面餘白。"
     },
     usage: { ja: "前菜・刺身・煮魚", en: "Appetizer, sashimi, simmered fish", "zh-TW": "前菜、刺身、煮魚" },
-    image: "/images/balloon-plate.jpg",
+    image: publicAssetUrl("/images/balloon-plate.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/6-087.html",
     priceUsd: 22,
     sampleStock: 8,
@@ -69,7 +70,7 @@ export const products: Product[] = [
       "zh-TW": "以山茶花留白構圖的長角皿，適合烤魚、串物與季節刺身。"
     },
     usage: { ja: "焼魚・串物・刺身", en: "Grilled fish, skewers, sashimi", "zh-TW": "烤魚、串物、刺身" },
-    image: "/images/camellia-plate.jpg",
+    image: publicAssetUrl("/images/camellia-plate.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/6-041.html",
     priceUsd: 27,
     sampleStock: 5,
@@ -99,7 +100,7 @@ export const products: Product[] = [
       "zh-TW": "青磁釉色覆於唐草雕紋之上，適合先付、小菜與分食料理。"
     },
     usage: { ja: "先付・煮物・取り鉢", en: "Amuse-bouche, nimono, side dish", "zh-TW": "先付、煮物、分食" },
-    image: "/images/celadon-bowl.jpg",
+    image: publicAssetUrl("/images/celadon-bowl.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/8-33.html",
     priceUsd: 18,
     sampleStock: 10,
@@ -129,7 +130,7 @@ export const products: Product[] = [
       "zh-TW": "白磁上的唐草雕紋能安靜承托高湯、時令食材與現代擺盤。"
     },
     usage: { ja: "煮物・汁物・小丼", en: "Nimono, broth, small rice dish", "zh-TW": "煮物、湯品、小丼" },
-    image: "/images/white-bowl.jpg",
+    image: publicAssetUrl("/images/white-bowl.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/12363.html",
     priceUsd: 20,
     sampleStock: 7,
@@ -159,7 +160,7 @@ export const products: Product[] = [
       "zh-TW": "深藍釉色搭配銀彩邊緣，適合當代日式與西式料理擺盤。"
     },
     usage: { ja: "前菜・サラダ・デザート", en: "Starter, salad, dessert", "zh-TW": "前菜、沙拉、甜點" },
-    image: "/images/blue-bowl.jpg",
+    image: publicAssetUrl("/images/blue-bowl.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/12-12.html",
     priceUsd: 25,
     sampleStock: 6,
@@ -189,7 +190,7 @@ export const products: Product[] = [
       "zh-TW": "帶把手的籃形器物繪有鐵線花，適合水果、菓子與季節拼盤。"
     },
     usage: { ja: "果物・菓子・盛り合わせ", en: "Fruit, sweets, seasonal arrangement", "zh-TW": "水果、菓子、季節拼盤" },
-    image: "/images/clematis-basket.jpg",
+    image: publicAssetUrl("/images/clematis-basket.jpg"),
     sourceUrl: "https://store.shopping.yahoo.co.jp/hanaemishop/12-72.html",
     priceUsd: 34,
     sampleStock: 4,
