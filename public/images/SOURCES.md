@@ -9,6 +9,7 @@ These images are used only in the private first-round demo. They are not present
 - `blue-bowl.jpg`: https://store.shopping.yahoo.co.jp/hanaemishop/12-12.html
 - `clematis-basket.jpg`: https://store.shopping.yahoo.co.jp/hanaemishop/12-72.html
 - `arita-uchiyama-townscape.jpg`: Wikimedia Commons, `File:Arita Japan.jpg`, photo by Butch, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Arita_Japan.jpg
+- `kazan-nabeshima-certificate.jpg`: Kazan official history page reference image, https://aritakazan.com/about.html. Demo use only, replace or confirm owner approval before public commercial release.
 
 Brand history reference: https://aritakazan.com/about.html
 Business reference: https://aritakazan.com/product.html

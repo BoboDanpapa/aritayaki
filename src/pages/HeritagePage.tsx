@@ -8,7 +8,7 @@ const content: Record<Language, {
   heroLabel: string;
   title: string;
   lead: string;
-  heroMarks: { year: string; label: string }[];
+  archiveLead: string;
   imageCaption: string;
   chapterLabel: string;
   aritaTitle: string;
@@ -28,15 +28,11 @@ const content: Record<Language, {
   imageCredit: string;
 }> = {
   ja: {
-    heroLabel: "華山と有田焼の沿革",
-    title: "華山と有田",
-    lead: "四百年の磁器文化と、1796年から続く華山の窯業。",
-    heroMarks: [
-      { year: "1796", label: "鍋島藩御用窯" },
-      { year: "1893", label: "シカゴ国際展覧会" },
-      { year: "1972", label: "株式会社華山" }
-    ],
-    imageCaption: "有田内山の町並み。窯業、商家、職人の時間が重なる場所。",
+    heroLabel: "OFFICIAL KILN, 1796",
+    title: "華山、窯業の記録。",
+    lead: "御用窯の鑑札から、世界へ渡った有田磁器まで。",
+    archiveLead: "華山と有田焼の沿革",
+    imageCaption: "鍋島藩御用達認定の鑑札。華山公式沿革より。",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "有田という土地が、磁器の時間をつくった。",
     aritaBody: "有田は日本の磁器文化を代表する産地です。白磁の余白、染付の藍、赤絵の華やぎ。山あいの町に窯、商家、職人の技が集まり、伊万里港を通じて海外へも渡った器の文化が育ちました。",
@@ -60,15 +56,11 @@ const content: Record<Language, {
     imageCredit: "画像: Wikimedia Commons, File:Arita Japan.jpg, Butch, CC BY-SA 4.0"
   },
   en: {
-    heroLabel: "Kazan and Arita Ware Chronicle",
-    title: "Kazan and Arita",
-    lead: "Four centuries of porcelain culture, and Kazan's kiln history since 1796.",
-    heroMarks: [
-      { year: "1796", label: "Nabeshima kiln" },
-      { year: "1893", label: "Chicago exposition" },
-      { year: "1972", label: "Kazan Co., Ltd." }
-    ],
-    imageCaption: "The Uchiyama townscape of Arita, where kilns, merchants, and craft memory meet.",
+    heroLabel: "OFFICIAL KILN, 1796",
+    title: "Kazan, a record of kiln craft.",
+    lead: "From an official kiln certificate to Arita porcelain made for the world.",
+    archiveLead: "Kazan and Arita ware chronicle",
+    imageCaption: "Certificate recognizing official service to the Nabeshima domain. From Kazan's official history.",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "Arita is a place where porcelain became culture.",
     aritaBody: "Arita is one of Japan's defining porcelain districts. White porcelain, blue underglaze, and overglaze decoration developed within a town shaped by kilns, merchants, and skilled hands. Through the port of Imari, its vessels also entered overseas tables and collections.",
@@ -92,15 +84,11 @@ const content: Record<Language, {
     imageCredit: "Image: Wikimedia Commons, File:Arita Japan.jpg, Butch, CC BY-SA 4.0"
   },
   "zh-TW": {
-    heroLabel: "華山與有田燒沿革",
-    title: "華山與有田",
-    lead: "四百年的磁器文化，以及華山自 1796 年延續至今的窯業。",
-    heroMarks: [
-      { year: "1796", label: "鍋島藩御用窯" },
-      { year: "1893", label: "芝加哥國際展覽會" },
-      { year: "1972", label: "株式会社華山" }
-    ],
-    imageCaption: "有田內山町屋街景。窯業、商家與職人記憶交會的地方。",
+    heroLabel: "OFFICIAL KILN, 1796",
+    title: "華山，窯業的記錄。",
+    lead: "從御用窯鑑札，到走向世界的有田磁器。",
+    archiveLead: "華山與有田燒沿革",
+    imageCaption: "鍋島藩御用達認定鑑札。出自華山官方沿革。",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "有田這片土地，孕育了日本磁器文化。",
     aritaBody: "有田是日本磁器文化的代表產地。白磁的留白、染付的藍、赤繪的華麗，在山間町屋、窯場、商家與職人技藝中逐漸形成。透過伊萬里港，有田器物也曾走向海外餐桌與收藏。",
@@ -170,25 +158,16 @@ export function HeritagePage() {
           <span>{t.heroLabel}</span>
           <h1>{t.title}</h1>
           <p>{t.lead}</p>
+          <small>{t.archiveLead}</small>
         </div>
-        <div className="hero-chronicle-wall reveal delay-one" aria-label={t.archiveTitle}>
-          {t.heroMarks.map((mark) => (
-            <article key={`${mark.year}-${mark.label}`}>
-              <strong>{mark.year}</strong>
-              <span>{mark.label}</span>
-            </article>
-          ))}
-        </div>
+        <figure className="archive-hero-image reveal delay-one">
+          <img src={publicAssetUrl("/images/kazan-nabeshima-certificate.jpg")} alt={t.imageCaption} />
+          <figcaption>{t.imageCaption}</figcaption>
+        </figure>
       </section>
 
       <section className="heritage-dual-story page-section">
-        <aside className="archive-photo-panel">
-          <span className="chapter-mark">{t.chapterLabel}</span>
-          <figure className="heritage-place-image">
-            <img src={publicAssetUrl("/images/arita-uchiyama-townscape.jpg")} alt={t.imageCaption} />
-            <figcaption>{t.imageCaption}</figcaption>
-          </figure>
-        </aside>
+        <div className="chapter-mark">{t.chapterLabel}</div>
         <article>
           <h2>{t.aritaTitle}</h2>
           <p>{t.aritaBody}</p>

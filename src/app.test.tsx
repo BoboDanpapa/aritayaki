@@ -17,10 +17,9 @@ function renderAt(path: string) {
 describe("clickable multi-page demo", () => {
   it("renders the Japanese heritage chronicle as the home experience by default", () => {
     const html = renderAt("/");
-    expect(html).toContain("華山と有田");
-    expect(html).toContain("四百年");
-    expect(html).toContain("華山と有田焼の沿革");
-    expect(html).not.toContain("Museum Chronicle");
+    expect(html).toContain("華山、窯業の記録。");
+    expect(html).toContain("OFFICIAL KILN, 1796");
+    expect(html).toContain("御用窯の鑑札");
     expect(html).toContain("正規海外販売パートナー");
   });
 
