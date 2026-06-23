@@ -17,8 +17,8 @@ export function SiteHeader() {
   const c = getCopy(language);
   const count = selection.reduce((sum, item) => sum + item.quantity, 0);
   const nav = [
-    ["/collection", c.navCollection],
     ["/heritage", c.navHeritage],
+    ["/collection", c.navCollection],
     ["/condition", c.navCondition],
     ["/for-chefs", c.navChefs]
   ];

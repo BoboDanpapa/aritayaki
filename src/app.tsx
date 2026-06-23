@@ -5,7 +5,6 @@ import { ConditionPage } from "./pages/ConditionPage";
 import { ConfirmationPage } from "./pages/ConfirmationPage";
 import { ForChefsPage } from "./pages/ForChefsPage";
 import { HeritagePage } from "./pages/HeritagePage";
-import { HomePage } from "./pages/HomePage";
 import { SelectionPage } from "./pages/SelectionPage";
 import { VesselPage } from "./pages/VesselPage";
 
@@ -13,7 +12,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route element={<PageShell />}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HeritagePage />} />
         <Route path="/collection" element={<CollectionPage />} />
         <Route path="/vessels/:slug" element={<VesselPage />} />
         <Route path="/heritage" element={<HeritagePage />} />

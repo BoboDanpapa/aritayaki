@@ -15,11 +15,17 @@ function renderAt(path: string) {
 }
 
 describe("clickable multi-page demo", () => {
-  it("renders the Japanese home experience by default", () => {
+  it("renders the Japanese heritage chronicle as the home experience by default", () => {
     const html = renderAt("/");
-    expect(html).toContain("1796年");
-    expect(html).toContain("コレクションを見る");
+    expect(html).toContain("華山と有田");
+    expect(html).toContain("四百年");
+    expect(html).toContain("Museum Chronicle");
     expect(html).toContain("正規海外販売パートナー");
+  });
+
+  it("keeps the culture page before the collection in the primary navigation", () => {
+    const html = renderAt("/");
+    expect(html.indexOf("華山と有田")).toBeLessThan(html.indexOf("コレクション"));
   });
 
   it("renders the collection as a dedicated page", () => {

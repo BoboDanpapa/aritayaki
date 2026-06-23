@@ -8,6 +8,7 @@ These images are used only in the private first-round demo. They are not present
 - `white-bowl.jpg`: https://store.shopping.yahoo.co.jp/hanaemishop/12363.html
 - `blue-bowl.jpg`: https://store.shopping.yahoo.co.jp/hanaemishop/12-12.html
 - `clematis-basket.jpg`: https://store.shopping.yahoo.co.jp/hanaemishop/12-72.html
+- `arita-uchiyama-townscape.jpg`: Wikimedia Commons, `File:Arita Japan.jpg`, photo by Butch, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Arita_Japan.jpg
 
 Brand history reference: https://aritakazan.com/about.html
 Business reference: https://aritakazan.com/product.html
