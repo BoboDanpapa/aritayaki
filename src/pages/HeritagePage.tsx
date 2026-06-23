@@ -8,7 +8,7 @@ const content: Record<Language, {
   heroLabel: string;
   title: string;
   lead: string;
-  heroMarks: string[];
+  heroMarks: { year: string; label: string }[];
   imageCaption: string;
   chapterLabel: string;
   aritaTitle: string;
@@ -31,7 +31,11 @@ const content: Record<Language, {
     heroLabel: "華山と有田焼の沿革",
     title: "華山と有田",
     lead: "四百年の磁器文化と、1796年から続く華山の窯業。",
-    heroMarks: ["1796 鍋島藩御用窯", "1893 シカゴ国際展覧会", "1972 株式会社華山"],
+    heroMarks: [
+      { year: "1796", label: "鍋島藩御用窯" },
+      { year: "1893", label: "シカゴ国際展覧会" },
+      { year: "1972", label: "株式会社華山" }
+    ],
     imageCaption: "有田内山の町並み。窯業、商家、職人の時間が重なる場所。",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "有田という土地が、磁器の時間をつくった。",
@@ -59,7 +63,11 @@ const content: Record<Language, {
     heroLabel: "Kazan and Arita Ware Chronicle",
     title: "Kazan and Arita",
     lead: "Four centuries of porcelain culture, and Kazan's kiln history since 1796.",
-    heroMarks: ["1796 Nabeshima kiln", "1893 Chicago exposition", "1972 Kazan Co., Ltd."],
+    heroMarks: [
+      { year: "1796", label: "Nabeshima kiln" },
+      { year: "1893", label: "Chicago exposition" },
+      { year: "1972", label: "Kazan Co., Ltd." }
+    ],
     imageCaption: "The Uchiyama townscape of Arita, where kilns, merchants, and craft memory meet.",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "Arita is a place where porcelain became culture.",
@@ -87,7 +95,11 @@ const content: Record<Language, {
     heroLabel: "華山與有田燒沿革",
     title: "華山與有田",
     lead: "四百年的磁器文化，以及華山自 1796 年延續至今的窯業。",
-    heroMarks: ["1796 鍋島藩御用窯", "1893 芝加哥國際展覽會", "1972 株式会社華山"],
+    heroMarks: [
+      { year: "1796", label: "鍋島藩御用窯" },
+      { year: "1893", label: "芝加哥國際展覽會" },
+      { year: "1972", label: "株式会社華山" }
+    ],
     imageCaption: "有田內山町屋街景。窯業、商家與職人記憶交會的地方。",
     chapterLabel: "KAZAN ARITA",
     aritaTitle: "有田這片土地，孕育了日本磁器文化。",
@@ -158,18 +170,25 @@ export function HeritagePage() {
           <span>{t.heroLabel}</span>
           <h1>{t.title}</h1>
           <p>{t.lead}</p>
-          <div className="hero-archive-marks" aria-label={t.archiveTitle}>
-            {t.heroMarks.map((mark) => <small key={mark}>{mark}</small>)}
-          </div>
         </div>
-        <figure className="heritage-place-image reveal delay-one">
-          <img src={publicAssetUrl("/images/arita-uchiyama-townscape.jpg")} alt={t.imageCaption} />
-          <figcaption>{t.imageCaption}</figcaption>
-        </figure>
+        <div className="hero-chronicle-wall reveal delay-one" aria-label={t.archiveTitle}>
+          {t.heroMarks.map((mark) => (
+            <article key={`${mark.year}-${mark.label}`}>
+              <strong>{mark.year}</strong>
+              <span>{mark.label}</span>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="heritage-dual-story page-section">
-        <div className="chapter-mark">{t.chapterLabel}</div>
+        <aside className="archive-photo-panel">
+          <span className="chapter-mark">{t.chapterLabel}</span>
+          <figure className="heritage-place-image">
+            <img src={publicAssetUrl("/images/arita-uchiyama-townscape.jpg")} alt={t.imageCaption} />
+            <figcaption>{t.imageCaption}</figcaption>
+          </figure>
+        </aside>
         <article>
           <h2>{t.aritaTitle}</h2>
           <p>{t.aritaBody}</p>
