@@ -19,7 +19,8 @@ describe("clickable multi-page demo", () => {
     const html = renderAt("/");
     expect(html).toContain("華山と有田");
     expect(html).toContain("四百年");
-    expect(html).toContain("Museum Chronicle");
+    expect(html).toContain("華山と有田焼の沿革");
+    expect(html).not.toContain("Museum Chronicle");
     expect(html).toContain("正規海外販売パートナー");
   });
 
