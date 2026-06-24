@@ -28,6 +28,12 @@ describe("clickable multi-page demo", () => {
     expect(html.indexOf("華山と有田")).toBeLessThan(html.indexOf("コレクション"));
   });
 
+  it("shows the listing demo entry after the buyer-facing navigation", () => {
+    const html = renderAt("/");
+    expect(html).toContain("出品Demo");
+    expect(html.indexOf("料理人の方へ")).toBeLessThan(html.indexOf("出品Demo"));
+  });
+
   it("renders the collection as a dedicated page", () => {
     const html = renderAt("/collection");
     expect(html).toContain("華山 セカンドセレクション");
@@ -39,5 +45,22 @@ describe("clickable multi-page demo", () => {
     expect(html).toContain("青磁 唐草彫小鉢");
     expect(html).toContain("コンディションレポート");
     expect(html).toContain("機能への影響なし");
+  });
+
+  it("renders the seller-side listing demo with prefilled vessel content", () => {
+    const html = renderAt("/listing-demo");
+    expect(html).toContain("出品準備室");
+    expect(html).toContain("Demo専用：実際の公開、在庫更新、画像保存は行われません。");
+    expect(html).toContain("染付唐草 小鉢");
+    expect(html).toContain("状態記録 2件");
+  });
+
+  it("renders the listing demo preparation checklist and overseas draft controls", () => {
+    const html = renderAt("/listing-demo");
+    expect(html).toContain("公開前確認");
+    expect(html).toContain("写真を確認");
+    expect(html).toContain("状態説明を確認");
+    expect(html).toContain("海外向けに整える");
+    expect(html).toContain("内容を確認して公開");
   });
 });

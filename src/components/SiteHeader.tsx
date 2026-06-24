@@ -20,7 +20,8 @@ export function SiteHeader() {
     ["/heritage", c.navHeritage],
     ["/collection", c.navCollection],
     ["/condition", c.navCondition],
-    ["/for-chefs", c.navChefs]
+    ["/for-chefs", c.navChefs],
+    ["/listing-demo", c.navListingDemo]
   ];
 
   return (

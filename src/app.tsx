@@ -5,6 +5,7 @@ import { ConditionPage } from "./pages/ConditionPage";
 import { ConfirmationPage } from "./pages/ConfirmationPage";
 import { ForChefsPage } from "./pages/ForChefsPage";
 import { HeritagePage } from "./pages/HeritagePage";
+import { ListingDemoPage } from "./pages/ListingDemoPage";
 import { SelectionPage } from "./pages/SelectionPage";
 import { VesselPage } from "./pages/VesselPage";
 
@@ -18,6 +19,7 @@ export function AppRoutes() {
         <Route path="/heritage" element={<HeritagePage />} />
         <Route path="/condition" element={<ConditionPage />} />
         <Route path="/for-chefs" element={<ForChefsPage />} />
+        <Route path="/listing-demo" element={<ListingDemoPage />} />
         <Route path="/selection" element={<SelectionPage />} />
         <Route path="/inquiry-confirmation" element={<ConfirmationPage />} />
       </Route>
